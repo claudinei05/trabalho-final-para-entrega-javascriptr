@@ -14,12 +14,13 @@
       <form id="formRecados-1">    
       <input type="text"  name="descriçao" id="descriçao" placeholder="Descrição" autocomplete="off"/> 
       <input type="text" name="detalhamento" id="detalhamento" placeholder="Detalhamento" autocomplete="off"/>
-       <input type="submit"  id="salvar" value="Salvar" onclick="recados(txtnum.value, txtDescrição, txtDetalhamento, txtAção)"/> 
+       <input type="submit"  id="salvar" value="Salvar"> 
 
       </form>
       
       <br><br>
       <hr>
+      <div id="msg-erro"></div>
       <section>
         <table>
             <thead>
@@ -29,13 +30,6 @@
                 <th id="acao">Ação</th>
             </thead>
             <tbody id="tableBody" >
-    <td>1</td>
-    <td>animação</td>
-    <td>Homem aranha</td>
-    <td>
-      <button>editar</button>
-      <button>remover</button>
-    </td>
             </tbody>
           </table>
       </section>
