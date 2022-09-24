@@ -11,7 +11,7 @@ formCadRecados.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const recado = {
-    id: Math.floor(Date.now() / 1000),
+    // id: Math.floor(Date.now() / 1000),
     desc: descricao.value,
     det: detalhamento.value,
   };
