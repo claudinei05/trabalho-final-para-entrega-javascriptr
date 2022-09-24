@@ -1,8 +1,8 @@
 let recados = [];
 
 const formCadRecados = document.getElementById("formRecados-1");
-const descricao = document.getElementById("descriçao");
-const detalhamento = document.getElementById("detalhamento");
+const descricao = document.getElementById("Desc");
+const detalhamento = document.getElementById("Det");
 const mensErro = document.getElementById("msg-erro");
 const atLocalStorage = (recados) => {
   localStorage.setItem("recados", JSON.stringify(recados));
@@ -18,6 +18,7 @@ formCadRecados.addEventListener("submit", (e) => {
   recados.push(recado);
 
   console.log(recado);
+  salvarRecados(e);
   criaRecado();
 });
 const buscaLocalStorage = () => {
@@ -28,6 +29,7 @@ const buscaLocalStorage = () => {
 function criaRecado() {
   let recados = buscaLocalStorage();
   let tbody = document.getElementById("tableBody");
+  let numero = 1;
   tbody.innerHTML = "";
   for (const recado of recados) {
     tbody.innerHTML += `
@@ -43,6 +45,7 @@ function criaRecado() {
     </td>
     
     `;
+    numero++;
   }
 }
 
@@ -50,28 +53,31 @@ const salvarRecados = (event) => {
   event.preventDefault();
   console.log("passou pelo evento");
   mensErro.innerHTML = "";
+  console.log(formCadRecados);
   // const thId=formCadRecados.thId.value
   const thDesc = formCadRecados.Desc.value;
   const thDet = formCadRecados.Det.value;
   const erros = [];
 
-  if (!desc || desc.length < 4) {
+  if (!thDesc || thDesc.length < 4) {
     erros.push("<p>Descrição invalida<p>");
   }
-  if (!det || det.length <= 0) {
+  if (!thDet || thDet.length <= 0) {
     erros.push("<p>Preencha o campo de Detalhamento<p>");
   }
   if (erros.length > 0) {
     mensErro.innerHTML = erros.join(" ");
     return;
   }
+
   const recado3 = buscaLocalStorage();
-  recado3.push({ id: recado3.length + 1, thDesc, thDet });
-  atLocalStorage(recados);
+  recado3.push({ id: recado3.length + 1, desc: thDesc, det: thDet });
+  atLocalStorage(recado3);
   alert("Recado inserido com sucesso");
   criaRecado();
+  console.log(recado3);
 };
-salvarRecados();
+
 let apagar = (id) => {
   const buscarRecados = buscaLocalStorage();
   const indexRecados = buscarRecados.findIndex((recados) => recados.id === id);
@@ -81,30 +87,3 @@ let apagar = (id) => {
   alert("Recado removido");
   criaRecado();
 };
-
-// function criarTable(num, descricao, detalhamento, acao) {
-//   let tb = document.getElementById("tableBody");
-//   let qtdlinhas = tb.rows.length;
-//   let linhas = tb.insertRow(qtdlinhas);
-
-//   let cellcodigo = linhas.insertCell(0);
-//   let celldescricao = linhas.insertCell(1);
-//   let celldetalhamento = linhas.insertCell(2);
-//   let cellacao = linhas.insertCell(3);
-
-//   cellcodigo.innerHTML = qtdlinhas;
-//   linhas.innerHTML = num;
-//   celldescricao.innerHTML = descricao;
-//   celldetalhamento.innerHTML = detalhamento;
-//   cellacao.innerHTML = acao;
-//   cellcodigo.innerHTML = qtdlinhas;
-//   cellcodigo.innerHTML = qtdlinhas;
-//   cellcodigo.innerHTML = qtdlinhas;
-//   console.log(tb);
-//   console.log(qtdlinhas);
-//   console.log(linhas);
-//   console.log(cellcodigo);
-//   console.log(celldetalhamento);
-//   console.log(cellacao);
-// }
-// criarTable();

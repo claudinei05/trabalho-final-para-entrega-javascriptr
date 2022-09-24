@@ -19,13 +19,13 @@ body {
   padding: 10px;
 }
 
-#descriçao {
+#Desc {
   width: 50vh;
   padding: 5px;
   border-radius: 10px;
   border: 0.5;
 }
-#detalhamento {
+#Det {
   width: 80vh;
   padding: 5px;
   border-radius: 10px;
@@ -46,6 +46,7 @@ body {
   left: 25vh;
   width: 40vh;
 }
+
 #det {
   position: relative;
   left: 45vh;
@@ -78,7 +79,7 @@ body {
   overflow: hidden;
 }
 
- .circles li {
+.circles li {
   position: absolute;
   display: block;
   list-style: none;
@@ -87,7 +88,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   animation: animate 25s linear infinite;
   bottom: -150px;
-} 
+}
 
 .circles li:nth-child(1) {
   left: 25%;
