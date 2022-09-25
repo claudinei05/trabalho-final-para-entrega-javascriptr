@@ -6,50 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista-Recados</title>
     <link rel="stylesheet" href="./css/listaRecados.css" />
-    
   </head>
   <body>
-    
     <div class="context">
       <h1>Meus recados</h1>
-      <form id="formRecados-1">    
-      <input type="text"  name="Desc" id="Desc" placeholder="Descrição" autocomplete="off"/> 
-      <input type="text" name="Det" id="Det" placeholder="Detalhamento" autocomplete="off"/>
-       <input type="submit"  id="salvar" value="Salvar"> 
-
+      <form id="formRecados-1">
+        <input
+          type="text"
+          name="Desc"
+          id="Desc"
+          placeholder="Descrição"
+          autocomplete="off"
+        />
+        <input
+          type="text"
+          name="Det"
+          id="Det"
+          placeholder="Detalhamento"
+          autocomplete="off"
+        />
+        <input type="submit" id="salvar" value="Salvar" />
       </form>
-      
-      <br><br>
-      <hr>
+
+      <br /><br />
+      <hr />
       <div id="msg-erro"></div>
       <section>
         <table>
-            <thead>
-                <th id="num">#</th>
-                <th id="desc">Descrição</th>
-                <th id="det">Detalhamento</th>
-                <th id="acao">Ação</th>
-            </thead>
-            <tbody id="tableBody" >
-            </tbody>
-          </table>
+          <thead>
+            <th id="num">#</th>
+            <th id="desc">Descrição</th>
+            <th id="det">Detalhamento</th>
+            <th id="acao">Ação</th>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
       </section>
-      
     </div>
 
-    <div class="area"> 
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+    <div class="area">
+      <!-- <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul> -->
+    </div>
     <script src="./javascript/listaRecados.js"></script>
   </body>
 </html>

@@ -3,9 +3,12 @@ const email = document.getElementById("email");
 const nome = document.getElementById("name");
 const senha = document.getElementById("password");
 const confSenha = document.getElementById("passconfirmation");
-const clickInput = document.querySelectorAll("input");
+const clickInput1 = document.querySelectorAll("input");
+const salvarLocalStorage = (conta) => {
+  localStorage.setItem(conta.email, JSON.stringify(conta));
+};
 
-clickInput.forEach(function (input) {
+clickInput1.forEach(function (input) {
   input.addEventListener("click", () => {
     atualizarValidacao(email);
   });
@@ -15,6 +18,14 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   checkInput();
+  const salvarValoresdoLS = {
+    email: email.value,
+    nome: nome.value,
+    senha: senha.value,
+    recados: [],
+  };
+
+  salvarLocalStorage(salvarValoresdoLS);
 });
 
 //Validação de todos os campos
@@ -66,7 +77,7 @@ function salvarValidacao(input) {
   formfull_box;
 }
 
-function atualizarValidacao(input) {
+function atualizarValidacao() {
   const small = form.querySelectorAll("small");
   small.forEach(function (small) {
     small.innerText = "";

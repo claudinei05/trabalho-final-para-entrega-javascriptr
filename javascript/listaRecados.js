@@ -10,14 +10,13 @@ const atLocalStorage = (recados) => {
 formCadRecados.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const recado = {
-    // id: Math.floor(Date.now() / 1000),
-    desc: descricao.value,
-    det: detalhamento.value,
-  };
-  recados.push(recado);
+  // const recado = {
+  //   id: Math.floor(Date.now() / 1000),
+  //   desc: descricao.value,
+  //   det: detalhamento.value,
+  // };
+  // recados.push(recado);
 
-  console.log(recado);
   salvarRecados(e);
   criaRecado();
 });
@@ -34,7 +33,9 @@ function criaRecado() {
   for (const recado of recados) {
     tbody.innerHTML += `
     <tr>
-    <th scope="row">${recado.id}</th>
+    <th scope="row">${numero}
+
+    </th>
     <td>${recado.desc}</td>
     <td>${recado.det}</td>
     <td>

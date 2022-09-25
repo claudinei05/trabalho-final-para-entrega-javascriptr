@@ -10,29 +10,42 @@
   <body>
     <div id="login-container">
       <h1>ENTRA NO SISTEMA DE RECADOS</h1>
-      <form id="from-index">
-        <label for="email"></label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Digite seu email"
-          autocomplete="off"
-        /><br />
-        <label for="password"></label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Digite sua senha"
-        />
-        <a href="#" id="forgot-pass">Esqueceu a senha?</a>
-        <input type="submit" value="login" />
+      <div>
+        <form id="from-index">
+          <div class="msg-erro-index"></div>
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Digite seu email"
+           
+            
+          />
+           <!-- autocomplete="off" -->
+          <small></small>
+          </div>
+          <div>
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Digite sua senha"
+            />
+            
+            <small></small>
+          </div>
+        <div>
+          <a href="#" id="forgot-pass">Esqueceu a senha?</a>
+          <input type="submit" value="login" />
+        </div>
+        <div id="register-container">
+          <p>Ainda não tem conta</p>
+          <a href="./criarConta.html">CRIAR CONTA</a>
+        </div>
       </form>
-      <div id="register-container">
-        <p>Ainda não tem conta</p>
-        <a href="./criarConta.html">CRIAR CONTA</a>
-      </div>
     </div>
+    <script src="./javascript/index.js"></script>
   </body>
 </html>
